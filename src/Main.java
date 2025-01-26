@@ -1,16 +1,18 @@
+import br.com.alura.movieCatalog.models.Movie;
+
 public class Main {
     public static void main(String[] args) {
-        Movie meuFilme = new Movie();
-        meuFilme.nome = "O poderoso chefão";
-        meuFilme.anoDeLancamento = 1970;
-        meuFilme.duracaoEmMinutos = 180;
+        Movie myMovie = new Movie();
+        myMovie.name = "The Godfather";
+        myMovie.releaseYear = 1970;
+        myMovie.durationInMinutes = 180;
 
-        meuFilme.exibeFichaTecnica();
-        meuFilme.avalia(8);
-        meuFilme.avalia(5);
-        meuFilme.avalia(10);
-        System.out.println(meuFilme.somaDasAvaliacoes);
-        System.out.println(meuFilme.totalDeAvaliacoes);
-        System.out.println(meuFilme.pegaMedia());
+        myMovie.displayTechnicalSheet();
+        myMovie.rate(8);
+        myMovie.rate(5);
+        myMovie.rate(10);
+        System.out.println(myMovie.sumOfRatings);
+        System.out.println(myMovie.totalRatings);
+        System.out.println(myMovie.getAverageRating());
     }
 }
