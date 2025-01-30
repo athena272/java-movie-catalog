@@ -1,9 +1,6 @@
 package br.com.alura.challenges.challenge02;
 
-import br.com.alura.challenges.challenge02.models.BankAccount;
-import br.com.alura.challenges.challenge02.models.Person;
-import br.com.alura.challenges.challenge02.models.Product;
-import br.com.alura.challenges.challenge02.models.Student;
+import br.com.alura.challenges.challenge02.models.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -43,5 +40,15 @@ public class Main {
         Student student2 = new Student("Karina", 6.8, 7.3, 8.5);
         student1.displayStudentDetails();
         student2.displayStudentDetails();
+
+        System.out.println("---------------------");
+        Book book1 = new Book();
+        book1.setTitle("Lógica de Programação");
+        book1.setAuthor("Paulo Silveira");
+        Book book2 = new Book();
+        book2.setTitle("A lógica do jogo");
+        book2.setAuthor("Marcus Becker");
+        book1.showDetails();
+        book2.showDetails();
     }
 }
