@@ -1,5 +1,7 @@
 package br.com.alura.challenges.challenge01;
 
+import br.com.alura.challenges.challenge01.models.*;
+
 public class Main {
     public static void main(String[] args) {
         Person person = new Person();
