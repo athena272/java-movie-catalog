@@ -1,24 +1,24 @@
-package br.com.alura.challenges.challenge01;
+package br.com.alura.challenges.challenge01.models;
 
 public class Music {
-    String title;
-    String artist;
-    int releaseYear;
+    public String title;
+    public String artist;
+    public int releaseYear;
     double sumOfRatings;
     int numberOfRatings;
 
-    void displayTechnicalSheet() {
+    public void displayTechnicalSheet() {
         System.out.println("Music title: " + title);
         System.out.println("Artist: " + artist);
         System.out.println("Release year: " + releaseYear);
     }
 
-    void rate(double rating) {
+    public void rate(double rating) {
         sumOfRatings += rating;
         numberOfRatings++;
     }
 
-    double getAverageRating() {
+    public double getAverageRating() {
         return sumOfRatings / numberOfRatings;
     }
 }
