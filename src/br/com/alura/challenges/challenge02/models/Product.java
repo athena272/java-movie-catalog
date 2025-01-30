@@ -24,4 +24,9 @@ public class Product {
     public void setName(String name) {
         this.name = name;
     }
+
+    public void applyDiscount(double discountPercentage) {
+        double discount = price * (discountPercentage / 100);
+        price = price - discount;
+    }
 }
