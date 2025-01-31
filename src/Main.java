@@ -1,18 +1,39 @@
+import br.com.alura.movieCatalog.functions.TimeCalculator;
 import br.com.alura.movieCatalog.models.Movie;
+import br.com.alura.movieCatalog.models.Serie;
 
 public class Main {
     public static void main(String[] args) {
-        Movie myMovie = new Movie();
-        myMovie.setName("The Godfather");
-        myMovie.setReleaseYear(1970);
-        myMovie.setDurationInMinutes(180);
+        Movie theGodfather = new Movie();
+        theGodfather.setName("The Godfather");
+        theGodfather.setReleaseYear(1970);
+        theGodfather.setDurationInMinutes(180);
 
-        myMovie.displayTechnicalSheet();
-        myMovie.rate(8);
-        myMovie.rate(5);
-        myMovie.rate(10);
-        System.out.println(myMovie.getSumOfRatings());
-        System.out.println(myMovie.getTotalRatings());
-        System.out.println(myMovie.getAverageRating());
+        theGodfather.displayTechnicalSheet();
+        theGodfather.rate(8);
+        theGodfather.rate(5);
+        theGodfather.rate(10);
+        System.out.println(theGodfather.getSumOfRatings());
+        System.out.println(theGodfather.getTotalRatings());
+        System.out.println(theGodfather.getAverageRating());
+
+        Serie lost = new Serie();
+        lost.setName("Lost");
+        lost.setReleaseYear(2000);
+        lost.displayTechnicalSheet();
+        lost.setSeasons(10);
+        lost.setEpisodesPerSeason(10);
+        lost.setMinutesPerEpisode(50);
+        System.out.println("Duration to binge-watch Lost: " + lost.getDurationInMinutes() + " minutes");
+        Movie avatar = new Movie();
+        avatar.setName("Avatar");
+        avatar.setReleaseYear(2010);
+        avatar.setDurationInMinutes(200);
+
+        TimeCalculator calculator = new TimeCalculator();
+        calculator.calculateTotalDuration(theGodfather);
+        calculator.calculateTotalDuration(avatar);
+        calculator.calculateTotalDuration(lost);
+        System.out.println("Current total time calculated: " + calculator.getTotalTime());
     }
 }
