@@ -46,5 +46,11 @@ public class Main {
         episode.setSerie(lost);
         episode.setTotalViews(99);
         filter.isRecommended(episode);
+
+        Movie snowWhite = new Movie();
+        snowWhite.setName("Snow White");
+        snowWhite.setDurationInMinutes(200);
+        snowWhite.setReleaseYear(2003);
+        snowWhite.rate(10);
     }
 }
