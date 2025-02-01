@@ -5,6 +5,10 @@ import br.com.alura.movieCatalog.functions.MediaEvaluator;
 public class Movie extends MediaType implements MediaEvaluator {
     private String director;
 
+    public Movie(String name, int releaseYear) {
+        super(name, releaseYear);
+    }
+
     public String getDirector() {
         return director;
     }
