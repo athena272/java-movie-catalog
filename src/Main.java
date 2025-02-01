@@ -1,4 +1,6 @@
+import br.com.alura.movieCatalog.functions.RecommendationFilter;
 import br.com.alura.movieCatalog.functions.TimeCalculator;
+import br.com.alura.movieCatalog.models.Episode;
 import br.com.alura.movieCatalog.models.Movie;
 import br.com.alura.movieCatalog.models.Serie;
 
@@ -35,5 +37,14 @@ public class Main {
         calculator.calculateTotalDuration(avatar);
         calculator.calculateTotalDuration(lost);
         System.out.println("Current total time calculated: " + calculator.getTotalTime());
+
+        RecommendationFilter filter = new RecommendationFilter();
+        filter.isRecommended(theGodfather);
+
+        Episode episode = new Episode();
+        episode.setNumber(1);
+        episode.setSerie(lost);
+        episode.setTotalViews(99);
+        filter.isRecommended(episode);
     }
 }

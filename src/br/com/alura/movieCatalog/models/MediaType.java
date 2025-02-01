@@ -69,4 +69,8 @@ public class MediaType {
     public void setDurationInMinutes(int durationInMinutes) {
         this.durationInMinutes = durationInMinutes;
     }
+
+    public double getMedia() {
+        return sumOfRatings / totalRatings;
+    }
 }

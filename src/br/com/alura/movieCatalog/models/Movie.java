@@ -1,6 +1,8 @@
 package br.com.alura.movieCatalog.models;
 
-public class Movie extends MediaType {
+import br.com.alura.movieCatalog.functions.MediaEvaluator;
+
+public class Movie extends MediaType implements MediaEvaluator {
     private String director;
 
     public String getDirector() {
@@ -9,5 +11,10 @@ public class Movie extends MediaType {
 
     public void setDirector(String director) {
         this.director = director;
+    }
+
+    @Override
+    public int getStars() {
+        return (int) getMedia();
     }
 }
