@@ -4,6 +4,8 @@ import br.com.alura.movieCatalog.models.Episode;
 import br.com.alura.movieCatalog.models.Movie;
 import br.com.alura.movieCatalog.models.Serie;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         Movie theGodfather = new Movie();
@@ -52,5 +54,13 @@ public class Main {
         snowWhite.setDurationInMinutes(200);
         snowWhite.setReleaseYear(2003);
         snowWhite.rate(10);
+
+        ArrayList<Movie> movies = new ArrayList<>();
+        movies.add(snowWhite);
+        movies.add(theGodfather);
+        movies.add(avatar);
+        System.out.println("Size of movies: " + movies.size());
+        System.out.println(movies);
+        System.out.println(movies.getFirst().toString());
     }
 }
