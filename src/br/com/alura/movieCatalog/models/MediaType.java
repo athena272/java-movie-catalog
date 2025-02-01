@@ -8,6 +8,11 @@ public class MediaType {
     private int totalRatings;
     private int durationInMinutes;
 
+    public MediaType(String name, int releaseYear) {
+        this.releaseYear = releaseYear;
+        this.name = name;
+    }
+
     public void displayTechnicalSheet() {
         System.out.println("Media name: " + name);
         System.out.println("Media release year: " + releaseYear);
