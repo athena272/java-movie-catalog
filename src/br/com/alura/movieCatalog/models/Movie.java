@@ -17,4 +17,9 @@ public class Movie extends MediaType implements MediaEvaluator {
     public int getStars() {
         return (int) getMedia();
     }
+
+    @Override
+    public String toString() {
+        return "Movie: " + this.getName() + " (" + this.getReleaseYear() + ")";
+    }
 }
