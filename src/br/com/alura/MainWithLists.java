@@ -5,6 +5,8 @@ import br.com.alura.movieCatalog.models.Movie;
 import br.com.alura.movieCatalog.models.Serie;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class MainWithLists {
     public static void main(String[] args) {
@@ -28,5 +30,14 @@ public class MainWithLists {
             System.out.println("-----------------");
         }
         //watched.forEach(media -> System.out.println(media));
+        Collections.sort(watched);
+        for (MediaType mediaType : watched) {
+            System.out.println(mediaType);
+        }
+        System.out.println("-----------------");
+        watched.sort(Comparator.comparing(MediaType::getReleaseYear));
+        for (MediaType mediaType : watched) {
+            System.out.println(mediaType);
+        }
     }
 }

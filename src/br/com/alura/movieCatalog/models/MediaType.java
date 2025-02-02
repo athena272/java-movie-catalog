@@ -1,6 +1,6 @@
 package br.com.alura.movieCatalog.models;
 
-public class MediaType {
+public class MediaType implements Comparable<MediaType> {
     private String name;
     private int releaseYear;
     private boolean includedInPlan;
@@ -77,5 +77,10 @@ public class MediaType {
 
     public double getMedia() {
         return sumOfRatings / totalRatings;
+    }
+
+    @Override
+    public int compareTo(MediaType anotherMediaType) {
+        return this.getName().compareTo(anotherMediaType.getName());
     }
 }
