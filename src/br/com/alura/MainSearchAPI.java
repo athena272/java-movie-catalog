@@ -1,5 +1,8 @@
 package br.com.alura;
 
+import br.com.alura.movieCatalog.models.MediaType;
+import com.google.gson.Gson;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -18,6 +21,11 @@ public class MainSearchAPI {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder().uri(URI.create(urlToUse)).build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-        System.out.println(response.body());
+        String json = response.body();
+        System.out.println(json);
+
+        Gson gson = new Gson();
+        MediaType media = gson.fromJson(json, MediaType.class);
+        System.out.println("Media: " + media.getName());
     }
 }
