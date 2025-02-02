@@ -1,5 +1,3 @@
-package br.com.alura;
-
 import br.com.alura.movieCatalog.models.MediaType;
 import br.com.alura.movieCatalog.models.Movie;
 import br.com.alura.movieCatalog.models.Serie;

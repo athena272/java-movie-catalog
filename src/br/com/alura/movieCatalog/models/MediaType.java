@@ -1,7 +1,11 @@
 package br.com.alura.movieCatalog.models;
 
+import com.google.gson.annotations.SerializedName;
+
 public class MediaType implements Comparable<MediaType> {
+    @SerializedName("Title")
     private String name;
+    @SerializedName("Year")
     private int releaseYear;
     private boolean includedInPlan;
     private double sumOfRatings;
@@ -11,6 +15,12 @@ public class MediaType implements Comparable<MediaType> {
     public MediaType(String name, int releaseYear) {
         this.releaseYear = releaseYear;
         this.name = name;
+    }
+
+    public MediaType(OmdbMedia mediaOmdb) {
+        this.name = mediaOmdb.title();
+        this.releaseYear = Integer.valueOf(mediaOmdb.year());
+        this.durationInMinutes = Integer.valueOf(mediaOmdb.runtime().substring(0, 3).trim());
     }
 
     public void displayTechnicalSheet() {
@@ -82,5 +92,14 @@ public class MediaType implements Comparable<MediaType> {
     @Override
     public int compareTo(MediaType anotherMediaType) {
         return this.getName().compareTo(anotherMediaType.getName());
+    }
+
+    @Override
+    public String toString() {
+        return "MediaType{" +
+                "name='" + name + '\'' +
+                ", releaseYear=" + releaseYear +
+                ", durationInMinutes=" + durationInMinutes +
+                '}';
     }
 }
