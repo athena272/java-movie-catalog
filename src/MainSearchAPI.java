@@ -1,4 +1,5 @@
 import br.com.alura.movieCatalog.models.MediaType;
+import br.com.alura.movieCatalog.models.OmdbMedia;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -23,7 +24,8 @@ public class MainSearchAPI {
         System.out.println(json);
 
         Gson gson = new Gson();
-        MediaType media = gson.fromJson(json, MediaType.class);
+        //MediaType media = gson.fromJson(json, MediaType.class);
+        OmdbMedia media = gson.fromJson(json, OmdbMedia.class);
         System.out.println("Media: " + media);
     }
 }
