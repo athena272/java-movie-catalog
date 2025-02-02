@@ -17,6 +17,12 @@ public class MediaType implements Comparable<MediaType> {
         this.name = name;
     }
 
+    public MediaType(OmdbMedia mediaOmdb) {
+        this.name = mediaOmdb.title();
+        this.releaseYear = Integer.valueOf(mediaOmdb.year());
+        this.durationInMinutes = Integer.valueOf(mediaOmdb.runtime().substring(0, 3).trim());
+    }
+
     public void displayTechnicalSheet() {
         System.out.println("Media name: " + name);
         System.out.println("Media release year: " + releaseYear);
@@ -93,6 +99,7 @@ public class MediaType implements Comparable<MediaType> {
         return "MediaType{" +
                 "name='" + name + '\'' +
                 ", releaseYear=" + releaseYear +
+                ", durationInMinutes=" + durationInMinutes +
                 '}';
     }
 }
