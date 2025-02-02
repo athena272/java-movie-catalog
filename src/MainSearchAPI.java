@@ -26,8 +26,9 @@ public class MainSearchAPI {
         System.out.println(json);
 
         Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
-        //MediaType media = gson.fromJson(json, MediaType.class);
-        OmdbMedia media = gson.fromJson(json, OmdbMedia.class);
+        OmdbMedia mediaOmdb = gson.fromJson(json, OmdbMedia.class);
+        System.out.println("Media OMDb: " + mediaOmdb);
+        MediaType media = new MediaType(mediaOmdb);
         System.out.println("Media: " + media);
     }
 }
