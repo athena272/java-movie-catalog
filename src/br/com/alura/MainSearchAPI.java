@@ -7,6 +7,6 @@ import java.net.http.HttpRequest;
 public class MainSearchAPI {
     public static void main(String[] args) {
         HttpClient client = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder().uri(URI.create("http://foo.com/")).build();
+        HttpRequest request = HttpRequest.newBuilder().uri(URI.create("https://www.omdbapi.com/?t=inside+out&apikey=6124c0b2")).build();
     }
 }
